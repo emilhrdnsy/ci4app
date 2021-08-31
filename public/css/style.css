@@ -1,0 +1,24 @@
+.sampul {
+  width: 80px;
+}
+
+.sampulModal {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* table > tbody > tr > * berarti All */
+
+.table > thead > tr > * {
+  vertical-align: middle;
+  text-align: center;
+}
+.table > tbody > tr > * {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.modal-dialog {
+  width: 70%;
+}
