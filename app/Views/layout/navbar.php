@@ -7,13 +7,13 @@
           <a class="nav-link active" aria-current="page" href="/app/index">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/app/tentang">Tentang</a>
+          <a class="nav-link" href="/app/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/app/kontak">Kontak</a>
+          <a class="nav-link" href="/app/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/app/komik">Komik</a>
+          <a class="nav-link" href="/app/comic">Comic</a>
         </li>
       </ul>
     </div>

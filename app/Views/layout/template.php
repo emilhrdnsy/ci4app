@@ -17,8 +17,8 @@
 </head>
 
 <body>
+  <?php echo $this->include('layout/navbar'); ?>
   <div class="container">
-    <?php echo $this->include('layout/navbar'); ?>
 
     <?php echo $this->renderSection('content'); ?>
 

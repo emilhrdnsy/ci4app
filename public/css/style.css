@@ -1,4 +1,4 @@
-.sampul {
+.cover {
   width: 80px;
 }
 
@@ -21,4 +21,8 @@
 
 .modal-dialog {
   width: 70%;
+}
+
+.btn-add {
+  float: right;
 }

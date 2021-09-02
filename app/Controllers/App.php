@@ -2,69 +2,87 @@
 
 namespace App\Controllers;
 
-use \App\Models\KomikModel;
+use \App\Models\ComicModel;
 
 class App extends BaseController
 {
-	protected $komikModel;
+	protected $comikModel;
 	public function __construct()
 	{
-		$this->komikModel = new KomikModel();
+		$this->comicModel = new ComicModel();
 	}
 
 	public function index()
 	{
 		$data = [
-			'title' => 'Beranda'
+			'title' => 'Home'
 		];
-		return view("pages/beranda", $data);
+		return view("pages/home", $data);
 	}
 
-	public function tentang()
+	public function about()
 	{
 		$data = [
-			'title' => 'Tentang'
+			'title' => 'About'
 		];
-		return view('pages/tentang', $data);
+		return view('pages/about', $data);
 	}
 
-	public function kontak()
+	public function Contact()
 	{
 		$data = [
-			'title' => 'Kontak',
-			'alamat' => [
+			'title' => 'Contact',
+			'address' => [
 				[
-					'tipe' => 'Rumah',
+					'tipe' => 'Home',
 					'alamat' => 'Jl.Mangga',
 					'kota' => 'palu'
 				]
 			]
 		];
-		return view('pages/kontak', $data);
+		return view('pages/contact', $data);
 	}
 
-	public function komik()
+
+	public function comic()
 	{
-		$komik = $this->komikModel->findAll();
+		$comic = $this->comicModel->findAll();
 
 		$data = [
-			'title' => 'Komik',
-			'komik' => $komik
+			'title' => 'Comic',
+			'comic' => $comic
 		];
 
 		// $komikModel = new \App\Models\KomikModel();
 		// $komikModel = new KomikModel();
 
-		return view('pages/komik', $data);
+		return view('comic/index', $data);
 	}
 
-	public function detailkomik()
+	public function add_comic()
 	{
 		$data = [
-			'title' => 'Detail Komik'
-
+			'title' => 'Add Comic Form'
 		];
 
-		return view('pages/detailkomik', $data);
+		return view('comic/add', $data);
+	}
+
+	public function save_comic()
+	{
+		$slug = url_title($this->request->getVar('title'), '-', true);
+
+		$this->comicModel->save([
+			'title' => $this->request->getVar('title'),
+			'slug' => $slug,
+			'author' => $this->request->getVar('author'),
+			'publisher' => $this->request->getVar('publisher'),
+			'volume' => $this->request->getVar('volume'),
+			'cover' => $this->request->getVar('cover')
+		]);
+
+		session()->setFlashData('message', 'New Comic have been added.');
+
+		return redirect()->to('/app/comic');
 	}
 }
