@@ -46,6 +46,7 @@ class App extends BaseController
 
 	public function comic()
 	{
+
 		$comic = $this->comicModel->findAll();
 
 		$data = [
@@ -61,8 +62,10 @@ class App extends BaseController
 
 	public function add_comic()
 	{
+		// session(); dipindah ke BaseController
 		$data = [
-			'title' => 'Add Comic Form'
+			'title' => 'Add Comic Form',
+			'validation' => \Config\Services::validation()
 		];
 
 		return view('comic/add', $data);
@@ -70,6 +73,21 @@ class App extends BaseController
 
 	public function save_comic()
 	{
+		// input validation
+		if (!$this->validate([
+			// 'title' => 'required|is_unique[comic.title]'
+			'title' => [
+				'rules' => 'required|is_unique[comic.title]',
+				'errors' => [
+					'required' => '{field} comic must be filled.',
+					'is_unique' => "{field} comic can't filled more than one."
+				]
+			]
+		])) {
+			$validation = \Config\Services::validation();
+			return redirect()->to('/app/add_comic')->withInput()->with('validation', $validation);
+		}
+
 		$slug = url_title($this->request->getVar('title'), '-', true);
 
 		$this->comicModel->save([

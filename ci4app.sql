@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Agu 2021 pada 07.50
+-- Waktu pembuatan: 03 Sep 2021 pada 02.36
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -24,37 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `komik`
+-- Struktur dari tabel `comic`
 --
 
-CREATE TABLE `komik` (
+CREATE TABLE `comic` (
   `id` int(11) NOT NULL,
-  `judul` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
-  `penulis` varchar(255) NOT NULL,
-  `penerbit` varchar(255) NOT NULL,
-  `sampul` varchar(255) NOT NULL,
-  `jilid` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `publisher` varchar(255) NOT NULL,
+  `volume` varchar(255) NOT NULL,
+  `cover` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `komik`
+-- Dumping data untuk tabel `comic`
 --
 
-INSERT INTO `komik` (`id`, `judul`, `slug`, `penulis`, `penerbit`, `sampul`, `jilid`, `created_at`, `updated_at`) VALUES
-(1, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume_27.jpg', 'Volume 27', '2021-08-29 15:17:21', '2021-08-29 15:17:21'),
-(2, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume_28.jpg', 'Volume 28', '2021-08-29 15:20:38', '2021-08-29 15:20:38');
+INSERT INTO `comic` (`id`, `title`, `slug`, `author`, `publisher`, `volume`, `cover`, `created_at`, `updated_at`) VALUES
+(1, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume 27', 'Volume_27.jpg', '2021-08-29 15:17:21', '2021-08-29 15:17:21'),
+(2, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume 28', 'Volume_28.jpg', '2021-08-29 15:20:38', '2021-08-29 15:20:38'),
+(3, 'Comic3', 'comic3', 'aku', 'aku', 'aku', 'aku', '2021-09-02 18:16:28', '2021-09-02 18:16:28'),
+(4, 'naruto', 'naruto', 'yuki tabata', 'k', 'k', 'k', '2021-09-02 19:19:43', '2021-09-02 19:19:43');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `komik`
+-- Indeks untuk tabel `comic`
 --
-ALTER TABLE `komik`
+ALTER TABLE `comic`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -62,10 +64,10 @@ ALTER TABLE `komik`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `komik`
+-- AUTO_INCREMENT untuk tabel `comic`
 --
-ALTER TABLE `komik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `comic`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

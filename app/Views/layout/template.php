@@ -37,6 +37,8 @@
           var penulis = $(this).data('penulis');
           var penerbit = $(this).data('penerbit');
           var jilid = $(this).data('jilid');
+          var tanggal_dibuat = $(this).data('tanggal-dibuat');
+          var tanggal_diperbarui = $(this).data('tanggal-diperbarui');
 
           // .val dipke jika hasil mau ditampilkan di inputan
           // dipke jika hasil mau ditampilkan di text
@@ -45,6 +47,8 @@
           $('#penulis').text(penulis);
           $('#penerbit').text(penerbit);
           $('#jilid').text(jilid);
+          $('#tanggal-dibuat').text(tanggal_dibuat);
+          $('#tanggal-diperbarui').text(tanggal_diperbarui);
         });
       });
     </script>

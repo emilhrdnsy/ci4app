@@ -31,9 +31,9 @@
         <td style="width: 20%;"><?= $comics['volume'] ?></td>
         <td style="width: auto;">
           <!-- <button onclick="location.href='http://www.example.com'">tap</button> -->
-          <button type="button" class="modal-detail btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_detail" data-judul="<?= $comics['title'] ?>" data-sampul="<?= $comics['cover'] ?>" data-penulis="<?= $comics['author'] ?>" data-penerbit="<?= $comics['publisher'] ?>" data-jilid="<?= $comics['volume'] ?>">
+          <button type="button" class="modal-detail btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_detail" data-judul="<?= $comics['title'] ?>" data-sampul="<?= $comics['cover'] ?>" data-penulis="<?= $comics['author'] ?>" data-penerbit="<?= $comics['publisher'] ?>" data-jilid="<?= $comics['volume'] ?>" data-tanggal-dibuat="<?= $comics['created_at']; ?>" data-tanggal-diperbarui="<?= $comics['updated_at']; ?>">
             <!-- <i class="fas fa-info-circle"></i> -->
-            Detail
+            Details
           </button>
           <!-- <button type="button" class="btn btn-danger">
             <i class="fas fa-trash"></i>
@@ -90,6 +90,7 @@
                 <div class="col-md-12  mt-2 mb-2">
                   <small class="text muted">
                     <b>Created at : </b>
+                    <span id="tanggal-dibuat"></span>
                   </small>
                 </div>
               </div>
@@ -97,6 +98,7 @@
                 <div class="col-md-12  mt-2 mb-2">
                   <small class="text muted">
                     <b>Updated at : </b>
+                    <span id="tanggal-diperbarui"></span>
                   </small>
                 </div>
               </div>
