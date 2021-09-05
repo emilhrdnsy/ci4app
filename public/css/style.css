@@ -26,3 +26,7 @@
 .btn-add {
   float: right;
 }
+
+.card-text {
+  line-height: 0.5;
+}

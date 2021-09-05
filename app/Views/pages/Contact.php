@@ -1,7 +1,7 @@
 <?php echo $this->extend('layout/template'); ?>
 
 <?php echo $this->section('content'); ?>
-<h1>Contact</h1>
+
 <?php foreach ($address as $addresses) : ?>
   <ul>
     <li><?= $addresses['tipe']; ?></li>

@@ -1,10 +1,9 @@
 <?php echo $this->extend('layout/template'); ?>
 
 <?php echo $this->section('content'); ?>
-<h1>Add Comic</h1>
 <div class="row">
   <div class="col-md-8" style="margin:0px auto;">
-    <form action="/app/save_comic" method="post">
+    <form action="/comic/save_comic" method="post">
       <?= csrf_field(); ?>
       <div class="row mb-3">
         <label for="title" class="col-sm-2 col-form-label">Title</label>

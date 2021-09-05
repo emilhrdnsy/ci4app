@@ -13,7 +13,7 @@
           <a class="nav-link" href="/app/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/app/comic">Comic</a>
+          <a class="nav-link" href="/comic">Comic</a>
         </li>
       </ul>
     </div>

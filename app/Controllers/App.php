@@ -2,20 +2,15 @@
 
 namespace App\Controllers;
 
-use \App\Models\ComicModel;
 
 class App extends BaseController
 {
-	protected $comikModel;
-	public function __construct()
-	{
-		$this->comicModel = new ComicModel();
-	}
 
 	public function index()
 	{
 		$data = [
-			'title' => 'Home'
+			'title' => 'Home',
+			'title2' => 'Home',
 		];
 		return view("pages/home", $data);
 	}
@@ -23,7 +18,8 @@ class App extends BaseController
 	public function about()
 	{
 		$data = [
-			'title' => 'About'
+			'title' => 'About',
+			'title2' => 'About',
 		];
 		return view('pages/about', $data);
 	}
@@ -32,6 +28,7 @@ class App extends BaseController
 	{
 		$data = [
 			'title' => 'Contact',
+			'title2' => 'Contact',
 			'address' => [
 				[
 					'tipe' => 'Home',
@@ -44,63 +41,63 @@ class App extends BaseController
 	}
 
 
-	public function comic()
-	{
+	// public function comic()
+	// {
 
-		$comic = $this->comicModel->findAll();
+	// 	$comic = $this->comicModel->findAll();
 
-		$data = [
-			'title' => 'Comic',
-			'comic' => $comic
-		];
+	// 	$data = [
+	// 		'title' => 'Comic',
+	// 		'comic' => $comic
+	// 	];
 
-		// $komikModel = new \App\Models\KomikModel();
-		// $komikModel = new KomikModel();
+	// 	// $komikModel = new \App\Models\KomikModel();
+	// 	// $komikModel = new KomikModel();
 
-		return view('comic/index', $data);
-	}
+	// 	return view('comic/index', $data);
+	// }
 
-	public function add_comic()
-	{
-		// session(); dipindah ke BaseController
-		$data = [
-			'title' => 'Add Comic Form',
-			'validation' => \Config\Services::validation()
-		];
+	// public function add_comic()
+	// {
+	// 	// session(); dipindah ke BaseController
+	// 	$data = [
+	// 		'title' => 'Add Comic Form',
+	// 		'validation' => \Config\Services::validation()
+	// 	];
 
-		return view('comic/add', $data);
-	}
+	// 	return view('comic/add', $data);
+	// }
 
-	public function save_comic()
-	{
-		// input validation
-		if (!$this->validate([
-			// 'title' => 'required|is_unique[comic.title]'
-			'title' => [
-				'rules' => 'required|is_unique[comic.title]',
-				'errors' => [
-					'required' => '{field} comic must be filled.',
-					'is_unique' => "{field} comic can't filled more than one."
-				]
-			]
-		])) {
-			$validation = \Config\Services::validation();
-			return redirect()->to('/app/add_comic')->withInput()->with('validation', $validation);
-		}
+	// public function save_comic()
+	// {
+	// 	// input validation
+	// 	if (!$this->validate([
+	// 		// 'title' => 'required|is_unique[comic.title]'
+	// 		'title' => [
+	// 			'rules' => 'required',
+	// 			'errors' => [
+	// 				'required' => '{field} comic must be filled.'
+	// 				// 'is_unique' => "{field} comic can't filled more than one."
+	// 			]
+	// 		]
+	// 	])) {
+	// 		$validation = \Config\Services::validation();
+	// 		return redirect()->to('/app/add_comic')->withInput()->with('validation', $validation);
+	// 	}
 
-		$slug = url_title($this->request->getVar('title'), '-', true);
+	// 	$slug = url_title($this->request->getVar('title'), '-', true);
 
-		$this->comicModel->save([
-			'title' => $this->request->getVar('title'),
-			'slug' => $slug,
-			'author' => $this->request->getVar('author'),
-			'publisher' => $this->request->getVar('publisher'),
-			'volume' => $this->request->getVar('volume'),
-			'cover' => $this->request->getVar('cover')
-		]);
+	// 	$this->comicModel->save([
+	// 		'title' => $this->request->getVar('title'),
+	// 		'slug' => $slug,
+	// 		'author' => $this->request->getVar('author'),
+	// 		'publisher' => $this->request->getVar('publisher'),
+	// 		'volume' => $this->request->getVar('volume'),
+	// 		'cover' => $this->request->getVar('cover')
+	// 	]);
 
-		session()->setFlashData('message', 'New Comic have been added.');
+	// 	session()->setFlashData('message', 'New Comic have been added.');
 
-		return redirect()->to('/app/comic');
-	}
+	// 	return redirect()->to('/app/comic');
+	// }
 }
