@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2021 pada 02.36
+-- Waktu pembuatan: 11 Sep 2021 pada 10.45
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -45,9 +45,8 @@ CREATE TABLE `comic` (
 
 INSERT INTO `comic` (`id`, `title`, `slug`, `author`, `publisher`, `volume`, `cover`, `created_at`, `updated_at`) VALUES
 (1, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume 27', 'Volume_27.jpg', '2021-08-29 15:17:21', '2021-08-29 15:17:21'),
-(2, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume 28', 'Volume_28.jpg', '2021-08-29 15:20:38', '2021-08-29 15:20:38'),
-(3, 'Comic3', 'comic3', 'aku', 'aku', 'aku', 'aku', '2021-09-02 18:16:28', '2021-09-02 18:16:28'),
-(4, 'naruto', 'naruto', 'yuki tabata', 'k', 'k', 'k', '2021-09-02 19:19:43', '2021-09-02 19:19:43');
+(2, 'Boku no Hero Academia', 'boku-no-Hero-academia', 'Kohei Horikoshi', 'Shueisha', 'Volume 30', '7895579-30.jpg', '2021-08-29 15:20:38', '2021-08-29 15:20:38'),
+(5, 'black clover2', 'black-clover2', 'asu', 'nub', 'nub', 'Volume_28.jpg', '2021-09-10 18:43:15', '2021-09-10 20:58:59');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +66,7 @@ ALTER TABLE `comic`
 -- AUTO_INCREMENT untuk tabel `comic`
 --
 ALTER TABLE `comic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

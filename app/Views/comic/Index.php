@@ -14,7 +14,7 @@
         <?= session()->getFlashData('warning'); ?>
       </div>
     <?php endif; ?>
-    <button class="btn btn-primary btn-add mb-3" onclick="location.href='/comic/add_comic'">
+    <button class="btn btn-primary btn-add mb-3" onclick="location.href='/comic/add'">
       <!-- < i class="fas fa-plus"></>  -->
       Add Comic
     </button>
@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <?php $i = 1; ?>
-        <?php foreach ($comic as $c => $comics) : ?>
+        <?php foreach ($comic as $comics) : ?>
           <tr>
             <th style="width: 10%;"><?= $i++; ?></th>
             <td style="width: 20%;"><img src="/image/<?= $comics['cover'] ?>" class="cover"></td>
@@ -42,7 +42,7 @@
               <!-- <button type="button" class="modal-detail btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_detail" data-judul="<?= $comics['title'] ?>" data-sampul="<?= $comics['cover'] ?>" data-penulis="<?= $comics['author'] ?>" data-penerbit="<?= $comics['publisher'] ?>" data-jilid="<?= $comics['volume'] ?>" data-tanggal-dibuat="<?= $comics['created_at']; ?>" data-tanggal-diperbarui="<?= $comics['updated_at']; ?>">
                 Details
               </button> -->
-              <button type="button" class="btn btn-success" onclick="location.href='/comic/detail_comic/<?= $comics['id']; ?>'">
+              <button type="button" class="btn btn-success" onclick="location.href='/comic/<?= $comics['slug']; ?>/detail'">
                 Details
               </button>
               </button>

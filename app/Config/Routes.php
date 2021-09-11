@@ -34,9 +34,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'App::index');
 $routes->get('/comic', 'Comic::index');
 
-$routes->get('/comic/add_comic', 'Comic::add_comic');
-$routes->delete('/comic/(:num)', 'Comic::delete_comic/$1');
-$routes->get('/comic/(:any)', 'Comic::detail_comic/$1');
+$routes->get('/comic/add', 'Comic::add_comic');
+$routes->get('/comic/save_comic', 'Comic::save_comic');
+$routes->delete('/comic/(:num)/delete', 'Comic::delete_comic/$1');
+$routes->get('/comic/(:any)/detail', 'Comic::detail_comic/$1');
+$routes->get('/comic/(:segment)/edit', 'Comic::edit_comic/$1');
+$routes->add('/comic/(:segment)/update', 'Comic::update_comic/$1');
 // :segment -> mengambil apapun yang ada di url + slash
 // :any -> mengambil apapun yang ada di url
 

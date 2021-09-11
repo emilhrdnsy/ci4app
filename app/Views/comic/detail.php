@@ -18,14 +18,14 @@
         <p class="card-text"><small class="text-muted">Updated_at : <?= $comic['updated_at']; ?></small></p>
 
         <div class="mb-3">
-          <button onclick="location.href='#'" type="button" class="btn btn-warning">
+          <a href="/comic/<?= $comic['slug'] ?>/edit" type="button" class="btn btn-warning">
             Edit
-          </button>
+          </a>
 
-          <form action="/comic/delete_comic/<?= $comic['id']; ?>" method="post" class="d-inline">
+          <form action="/comic/<?= $comic['id']; ?>/delete" method="post" class="d-inline">
             <?= csrf_field(); ?>
             <input type="hidden" name="_method" value="DELETE"> <!-- http method spoofing -->
-            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?')">
               Delete
             </button>
           </form>
