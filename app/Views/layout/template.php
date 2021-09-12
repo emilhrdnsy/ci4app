@@ -8,6 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="/bootstrap-5.1.0/dist/css/bootstrap.min.css"> -->
 
   <link rel="stylesheet" href="/css/style.css">
@@ -52,6 +53,21 @@
           $('#tanggal-diperbarui').text(tanggal_diperbarui);
         });
       });
+    </script>
+    <script>
+      function previewImg() {
+        let coverName = document.querySelector('#cover');
+        let coverLabel = document.querySelector('.custom-file-label');
+        let imgPreview = document.querySelector('.img-preview');
+
+        coverLabel.textContent = cover.files[0].name;
+
+        let fileCover = new FileReader();
+        fileCover.readAsDataURL(cover.files[0]);
+        fileCover.onload = function(event) {
+          imgPreview.src = event.target.result;
+        }
+      }
     </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

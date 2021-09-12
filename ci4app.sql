@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Sep 2021 pada 10.45
+-- Waktu pembuatan: 12 Sep 2021 pada 08.28
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -46,7 +46,10 @@ CREATE TABLE `comic` (
 INSERT INTO `comic` (`id`, `title`, `slug`, `author`, `publisher`, `volume`, `cover`, `created_at`, `updated_at`) VALUES
 (1, 'Black Clover', 'black-clover', 'Yuki Tabata', 'Shueisha', 'Volume 27', 'Volume_27.jpg', '2021-08-29 15:17:21', '2021-08-29 15:17:21'),
 (2, 'Boku no Hero Academia', 'boku-no-Hero-academia', 'Kohei Horikoshi', 'Shueisha', 'Volume 30', '7895579-30.jpg', '2021-08-29 15:20:38', '2021-08-29 15:20:38'),
-(5, 'black clover2', 'black-clover2', 'asu', 'nub', 'nub', 'Volume_28.jpg', '2021-09-10 18:43:15', '2021-09-10 20:58:59');
+(3, 'black clover2', 'black-clover2', 'asu', 'nub', 'nub', 'Volume_28.jpg', '2021-09-10 18:43:15', '2021-09-10 20:58:59'),
+(4, 'kanojo, okarishimasu', 'kanojo-okarishimasu', ' Reiji Miyajima', 'Shueisha', '21', '-', '2021-09-11 08:19:41', '2021-09-11 08:20:02'),
+(5, 'ff', 'ff', 'ff', 'ff', '{Volume}21', 'ee', '2021-09-11 08:25:28', '2021-09-11 08:25:28'),
+(6, 'klu', 'klu', 'lklk', 'lklk', '23', '1631427901_c9e4955cde08e03c5801.png', '2021-09-11 22:06:28', '2021-09-12 01:25:01');
 
 --
 -- Indexes for dumped tables

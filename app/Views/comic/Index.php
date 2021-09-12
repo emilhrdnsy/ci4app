@@ -24,7 +24,7 @@
           <th scope="col">No</th>
           <th scope="col">Cover</th>
           <th scope="col">Title</th>
-          <th scope="col">Chapter</th>
+          <th scope="col">Volume</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
