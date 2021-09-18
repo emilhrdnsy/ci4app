@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'App::index');
 $routes->get('/comic', 'Comic::index');
+$routes->get('/orang', 'Orang::index');
 
 $routes->get('/comic/add', 'Comic::add_comic');
 $routes->get('/comic/save_comic', 'Comic::save_comic');

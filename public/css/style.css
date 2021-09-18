@@ -16,9 +16,12 @@
 }
 .table > tbody > tr > * {
   vertical-align: middle;
-  text-align: center;
 }
-
+.table > tbody > tr {
+  line-height: 25px;
+  min-height: 25px;
+  height: 25px;
+}
 .modal-dialog {
   width: 70%;
 }
@@ -29,4 +32,15 @@
 
 .card-text {
   line-height: 0.5;
+}
+
+body {
+  height: 700px;
+}
+.table100,
+.row,
+.container,
+.table-responsive,
+.table-bordered {
+  height: 100%;
 }

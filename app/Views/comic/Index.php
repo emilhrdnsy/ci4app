@@ -18,14 +18,15 @@
       <!-- < i class="fas fa-plus"></>  -->
       Add Comic
     </button>
-    <table class="table table-hover">
+
+    <table class="table table-hover table-sm table-responsive-sm">
       <thead>
         <tr>
-          <th scope="col">No</th>
-          <th scope="col">Cover</th>
-          <th scope="col">Title</th>
-          <th scope="col">Volume</th>
-          <th scope="col">Action</th>
+          <th scope="col" class="col-1">No</th>
+          <th scope="col" class="col-1">Cover</th>
+          <th scope="col" class="col-4">Title</th>
+          <th scope="col" class="col-1">Volume</th>
+          <th scope="col" class="col-1">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +34,8 @@
         <?php foreach ($comic as $comics) : ?>
           <tr>
             <th style="width: 10%;"><?= $i++; ?></th>
-            <td style="width: 20%;"><img src="/image/<?= $comics['cover'] ?>" class="cover"></td>
+            <!-- <td style="width: 20%;"><img src="/image/<?= $comics['cover'] ?>" class="cover"></td> -->
+            <td style="width: 20%;"><img src="/image/1631427901_c9e4955cde08e03c5801.png" class="cover" style="width: 30%;"></td>
             <td style="width: 20%;"><?= $comics['title'] ?></td>
             <td style="width: 20%;"><?= $comics['volume'] ?></td>
             <td style="width: auto;">
@@ -42,7 +44,7 @@
               <!-- <button type="button" class="modal-detail btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_detail" data-judul="<?= $comics['title'] ?>" data-sampul="<?= $comics['cover'] ?>" data-penulis="<?= $comics['author'] ?>" data-penerbit="<?= $comics['publisher'] ?>" data-jilid="<?= $comics['volume'] ?>" data-tanggal-dibuat="<?= $comics['created_at']; ?>" data-tanggal-diperbarui="<?= $comics['updated_at']; ?>">
                 Details
               </button> -->
-              <button type="button" class="btn btn-success" onclick="location.href='/comic/<?= $comics['slug']; ?>/detail'">
+              <button type="button" class="btn btn-sm btn-success" onclick="location.href='/comic/<?= $comics['slug']; ?>/detail'">
                 Details
               </button>
               </button>

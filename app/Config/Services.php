@@ -17,6 +17,7 @@ use CodeIgniter\Config\BaseService;
  * method format you should use for your service methods. For more examples,
  * see the core Services file at system/Config/Services.php.
  */
+
 class Services extends BaseService
 {
 	// public static function example($getShared = true)
@@ -28,4 +29,6 @@ class Services extends BaseService
 	//
 	//     return new \CodeIgniter\Example();
 	// }
+	
+
 }

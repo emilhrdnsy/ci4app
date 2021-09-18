@@ -8,6 +8,8 @@ class ComicModel extends Model
 {
   protected $table = 'comic';
   protected $useTimestamps = true;
+
+  // field yang akan diisi manual
   protected $allowedFields = ['title', 'slug', 'author', 'publisher', 'volume', 'cover'];
 
   public function getComic($slug = false)
